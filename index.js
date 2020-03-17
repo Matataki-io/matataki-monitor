@@ -20,6 +20,7 @@ app.use(async (ctx) => {
         if (postData.userId === config.userId
             && postData.alertName === config.alertName
             && postData.alertState === config.alertState) {
+            logger.error('exec restart script');
             exec('bash restart.sh')
         }
     }
